@@ -18,6 +18,9 @@ public class Service3 extends IntentService {
         Log.d(TAG, "myarg = " + intent.getStringExtra(EXTRA_MYARG));
         try {
             Thread.sleep(5000); // 5 sec
+            Intent in = new Intent();
+            in.setAction("hoge");
+            sendBroadcast(in);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

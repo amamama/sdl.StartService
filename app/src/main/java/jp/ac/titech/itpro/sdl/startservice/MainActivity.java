@@ -1,8 +1,8 @@
 package jp.ac.titech.itpro.sdl.startservice;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
@@ -27,6 +27,13 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onClickTest2 in " + Thread.currentThread());
         Intent intent = new Intent(this, Service2.class);
         intent.putExtra(Service2.EXTRA_MYARG, "Hello, Service2");
+        startService(intent);
+    }
+
+    public void onClickTest3(View v) {
+        Log.d(TAG, "onClickTest3 in " + Thread.currentThread());
+        Intent intent = new Intent(this, Service3.class);
+        intent.putExtra(Service3.EXTRA_MYARG, "Hello, Service3");
         startService(intent);
     }
 }
